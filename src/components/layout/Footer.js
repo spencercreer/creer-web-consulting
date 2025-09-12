@@ -146,11 +146,11 @@ const Footer = () => {
         
         <FooterSection>
           <FooterTitle>Quick Links</FooterTitle>
-          <FooterLink to="/" onClick={() => window.scrollTo(0, 0)}>Home</FooterLink>
-          <FooterLink to="/about" onClick={() => window.scrollTo(0, 0)}>About</FooterLink>
-          <FooterLink to="/services" onClick={() => window.scrollTo(0, 0)}>Services</FooterLink>
-          {/* <FooterLink to="/portfolio" onClick={() => window.scrollTo(0, 0)}>Portfolio</FooterLink> */}
-          <FooterLink to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</FooterLink>
+          <FooterLink to="/" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Home</FooterLink>
+          <FooterLink to="/about" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>About</FooterLink>
+          <FooterLink to="/services" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Services</FooterLink>
+          {/* <FooterLink to="/portfolio" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Portfolio</FooterLink> */}
+          <FooterLink to="/contact" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Contact</FooterLink>
         </FooterSection>
         
         <FooterSection>

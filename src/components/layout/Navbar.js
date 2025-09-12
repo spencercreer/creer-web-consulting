@@ -158,7 +158,7 @@ const Navbar = ({ scrolled }) => {
             scrolled={scrolled} 
             onClick={() => {
               setIsOpen(false)
-              window.scrollTo(0, 0)
+              setTimeout(() => window.scrollTo(0, 0), 100)
             }}
             isActive={location.pathname === '/'}
           >
@@ -171,7 +171,7 @@ const Navbar = ({ scrolled }) => {
             scrolled={scrolled} 
             onClick={() => {
               setIsOpen(false)
-              window.scrollTo(0, 0)
+              setTimeout(() => window.scrollTo(0, 0), 100)
             }}
             isActive={location.pathname === '/services'}
           >
@@ -184,7 +184,7 @@ const Navbar = ({ scrolled }) => {
             scrolled={scrolled} 
             onClick={() => {
               setIsOpen(false)
-              window.scrollTo(0, 0)
+              setTimeout(() => window.scrollTo(0, 0), 100)
             }}
             isActive={location.pathname === '/about'}
           >
@@ -203,7 +203,7 @@ const Navbar = ({ scrolled }) => {
             to="/contact" 
             onClick={() => {
               setIsOpen(false)
-              window.scrollTo(0, 0)
+              setTimeout(() => window.scrollTo(0, 0), 100)
             }}
             isActive={location.pathname === '/contact'}
           >
