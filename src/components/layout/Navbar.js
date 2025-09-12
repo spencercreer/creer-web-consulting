@@ -156,7 +156,10 @@ const Navbar = ({ scrolled }) => {
           <NavLink 
             to="/" 
             scrolled={scrolled} 
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+              window.scrollTo(0, 0)
+            }}
             isActive={location.pathname === '/'}
           >
             Home
@@ -166,7 +169,10 @@ const Navbar = ({ scrolled }) => {
           <NavLink 
             to="/services" 
             scrolled={scrolled} 
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+              window.scrollTo(0, 0)
+            }}
             isActive={location.pathname === '/services'}
           >
             Services
@@ -176,7 +182,10 @@ const Navbar = ({ scrolled }) => {
           <NavLink 
             to="/about" 
             scrolled={scrolled} 
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+              window.scrollTo(0, 0)
+            }}
             isActive={location.pathname === '/about'}
           >
             About
@@ -192,7 +201,10 @@ const Navbar = ({ scrolled }) => {
         <NavItem>
           <ContactButton 
             to="/contact" 
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+              window.scrollTo(0, 0)
+            }}
             isActive={location.pathname === '/contact'}
           >
             Contact Us

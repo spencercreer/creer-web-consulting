@@ -55,12 +55,6 @@ const ServiceSection = styled.section`
 
 const ServiceContent = styled.div``;
 
-const ServiceIcon = styled.div`
-  font-size: 3rem;
-  color: #4a90e2;
-  margin-bottom: 1.5rem;
-`;
-
 const ServiceTitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -155,9 +149,6 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <ServiceIcon>
-              <FaCode />
-            </ServiceIcon>
             <ServiceTitle>Web App Development</ServiceTitle>
             <ServiceDescription>
               We build custom web applications that are scalable, secure, and user-friendly.
@@ -176,7 +167,7 @@ const Services = () => {
         </ServiceContent>
         <ServiceImage>
           <motion.img 
-            src="/images/services/web-development.jpg" 
+            src="/images/services/image.png" 
             alt="Web Development"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -194,9 +185,6 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <ServiceIcon>
-              <FaCloud />
-            </ServiceIcon>
             <ServiceTitle>Cloud Architecture</ServiceTitle>
             <ServiceDescription>
               As an AWS Certified Developer, we design and implement cloud solutions that
@@ -215,7 +203,7 @@ const Services = () => {
         </ServiceContent>
         <ServiceImage>
           <motion.img 
-            src="/images/services/cloud-architecture.jpg" 
+            src="/images/services/image.png" 
             alt="Cloud Architecture"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -233,9 +221,6 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <ServiceIcon>
-              <FaRobot />
-            </ServiceIcon>
             <ServiceTitle>AI Integration</ServiceTitle>
             <ServiceDescription>
               We help businesses implement cutting-edge AI solutions to automate processes,
@@ -254,7 +239,7 @@ const Services = () => {
         </ServiceContent>
         <ServiceImage>
           <motion.img 
-            src="/images/services/ai-integration.jpg" 
+            src="/images/services/image.png" 
             alt="AI Integration"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -272,9 +257,6 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <ServiceIcon>
-              <FaMobile />
-            </ServiceIcon>
             <ServiceTitle>Mobile Development</ServiceTitle>
             <ServiceDescription>
               We develop native and cross-platform mobile applications that provide
@@ -293,7 +275,7 @@ const Services = () => {
         </ServiceContent>
         <ServiceImage>
           <motion.img 
-            src="/images/services/mobile-development.jpg" 
+            src="/images/services/image.png" 
             alt="Mobile Development"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -311,9 +293,6 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <ServiceIcon>
-              <FaPalette />
-            </ServiceIcon>
             <ServiceTitle>Website Design & Development</ServiceTitle>
             <ServiceDescription>
               We create beautiful, responsive websites that represent your brand and
@@ -332,7 +311,7 @@ const Services = () => {
         </ServiceContent>
         <ServiceImage>
           <motion.img 
-            src="/images/services/website-design.jpg" 
+            src="/images/services/image.png" 
             alt="Website Design"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}

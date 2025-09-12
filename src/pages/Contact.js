@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 // Import common components
 import Section from '../components/common/Section';
@@ -301,7 +301,7 @@ const Contact = () => {
               <FaEnvelope />
               <ContactItemContent>
                 <ContactItemTitle>Email</ContactItemTitle>
-                <ContactItemText>info@creerweb.com</ContactItemText>
+                <ContactItemText>spencercreer@gmail.com</ContactItemText>
               </ContactItemContent>
             </ContactItem>
             
@@ -309,30 +309,15 @@ const Contact = () => {
               <FaPhone />
               <ContactItemContent>
                 <ContactItemTitle>Phone</ContactItemTitle>
-                <ContactItemText>(555) 123-4567</ContactItemText>
-              </ContactItemContent>
-            </ContactItem>
-            
-            <ContactItem>
-              <FaMapMarkerAlt />
-              <ContactItemContent>
-                <ContactItemTitle>Location</ContactItemTitle>
-                <ContactItemText>
-                  123 Tech Street<br />
-                  San Francisco, CA 94105<br />
-                  United States
-                </ContactItemText>
+                <ContactItemText>(602) 525-4634</ContactItemText>
               </ContactItemContent>
             </ContactItem>
             
             <SocialLinks>
-              <SocialIcon href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <SocialIcon href="https://www.linkedin.com/in/spencer-creer-023246109/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </SocialIcon>
-              <SocialIcon href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
-              </SocialIcon>
-              <SocialIcon href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <SocialIcon href="https://github.com/spencercreer" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </SocialIcon>
             </SocialLinks>

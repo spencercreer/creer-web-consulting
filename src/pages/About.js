@@ -244,6 +244,7 @@ const CTADescription = styled.p`
   max-width: 700px;
   margin: 0 auto 2rem;
   opacity: 0.9;
+  color: white;
 `;
 
 const CTAButton = styled.a`
@@ -297,7 +298,7 @@ const About = () => {
           <Grid.Item span={1}>
             <HeroImage>
               <motion.img 
-                src="/images/about/about-img.jpg" 
+                src="/images/about/image.png" 
                 alt="Spencer Creer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}

@@ -14,7 +14,7 @@ import Button from '../components/common/Button';
 const HeroSection = styled.section`
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('/images/hero-bg.jpg') no-repeat center center/cover;
+              url('/images/hero-bg.png') no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -407,7 +407,7 @@ const Home = () => {
           <Grid.Item span={1}>
             <AboutImage>
               <motion.img 
-                src="/images/about/about-img.jpg" 
+                src="/images/about/image.png" 
                 alt="About CreerWebConsulting"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}

@@ -126,13 +126,10 @@ const Footer = () => {
             for businesses of all sizes.
           </FooterText>
           <SocialLinks>
-            <SocialIcon href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <SocialIcon href="https://www.linkedin.com/in/spencer-creer-023246109/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </SocialIcon>
-            <SocialIcon href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </SocialIcon>
-            <SocialIcon href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <SocialIcon href="https://github.com/spencercreer" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </SocialIcon>
           </SocialLinks>
