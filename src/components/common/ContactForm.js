@@ -183,6 +183,10 @@ const ContactForm = () => {
       const data = await response.json();
       
       if (!response.ok) {
+        // Show specific validation errors if available
+        if (data.errors && Array.isArray(data.errors)) {
+          throw new Error(data.errors.join(', '));
+        }
         throw new Error(data.message || 'Failed to send message');
       }
       
