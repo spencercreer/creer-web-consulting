@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaAward, FaUniversity, FaLaptopCode, FaCloudversify, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa';
+import { FaAward, FaUniversity, FaLaptopCode, FaAws, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa';
 
 // Import common components
 import Section from '../components/common/Section';
@@ -325,7 +325,7 @@ const About = () => {
           <Grid.Item span={1}>
             <StatCard>
               <StatIcon>
-                <FaCloudversify />
+                <FaAws />
               </StatIcon>
               <StatNumber>1</StatNumber>
               <StatTitle>AWS Certification</StatTitle>

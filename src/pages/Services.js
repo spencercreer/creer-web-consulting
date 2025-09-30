@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaCode, FaCloud, FaRobot, FaMobile, FaPalette } from 'react-icons/fa';
+import { FaCloud, FaRobot, FaMobile, FaPalette } from 'react-icons/fa';
 
 // Import common components
 import Section from '../components/common/Section';
