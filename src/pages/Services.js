@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaCloud, FaRobot, FaMobile, FaPalette } from 'react-icons/fa';
+// import { FaCode, FaCloud, FaRobot, FaMobile, FaPalette } from 'react-icons/fa';
 
 // Import common components
-import Section from '../components/common/Section';
 import Button from '../components/common/Button';
 
 const ServicesContainer = styled.div`
@@ -135,11 +134,12 @@ const CTAButton = styled.a`
 const Services = () => {
   return (
     <ServicesContainer>
-      <Section 
-        padding="120px 0 3rem"
-        title="Our Services"
-        subtitle="We provide comprehensive technology solutions tailored to your business needs, from web development and cloud architecture to AI integration and mobile applications."
-      >
+      <PageHeader>
+        <PageTitle>Our <span>Services</span></PageTitle>
+        <PageDescription>
+          We provide comprehensive technology solutions tailored to your business needs, from web development and cloud architecture to AI integration and mobile applications.
+        </PageDescription>
+      </PageHeader>
       
       <ServiceSection id="web-development">
         <ServiceContent>
@@ -321,17 +321,14 @@ const Services = () => {
         </ServiceImage>
       </ServiceSection>
       
-      <Section bgColor="var(--secondary)" padding="4rem 0">
-        <CTASection>
-          <CTATitle>Ready to Get Started?</CTATitle>
-          <CTADescription>
-            Contact us today to discuss your project requirements and how our services
-            can help your business grow in the digital landscape.
-          </CTADescription>
-          <Button primary large to="/contact">Schedule a Consultation</Button>
-        </CTASection>
-      </Section>
-      </Section>
+      <CTASection>
+        <CTATitle>Ready to Get Started?</CTATitle>
+        <CTADescription>
+          Contact us today to discuss your project requirements and how our services
+          can help your business grow in the digital landscape.
+        </CTADescription>
+        <Button primary large to="/contact">Schedule a Consultation</Button>
+      </CTASection>
     </ServicesContainer>
   );
 };

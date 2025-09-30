@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaAward, FaUniversity, FaLaptopCode, FaAws, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa';
 
 // Import common components
-import Section from '../components/common/Section';
-import Grid from '../components/common/Grid';
 import Button from '../components/common/Button';
 
 const AboutContainer = styled.div`
@@ -102,11 +99,6 @@ const StatCard = styled(motion.div)`
   text-align: center;
 `;
 
-const StatIcon = styled.div`
-  font-size: 2.5rem;
-  color: #4a90e2;
-  margin-bottom: 1rem;
-`;
 
 const StatNumber = styled.h3`
   font-size: 2.5rem;
@@ -150,13 +142,6 @@ const QualificationColumn = styled.div``;
 const QualificationTitle = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  
-  svg {
-    margin-right: 10px;
-    color: #4a90e2;
-  }
 `;
 
 const QualificationItem = styled(motion.div)`
@@ -266,99 +251,97 @@ const CTAButton = styled.a`
 const About = () => {
   return (
     <AboutContainer>
-      <Section 
-        padding="120px 0 3rem"
-        title="About Us"
-        subtitle="Learn more about CreerWebConsulting, our expertise, and our approach to delivering exceptional technology solutions for our clients."
-      >
+      <PageHeader>
+        <PageTitle>About <span>Us</span></PageTitle>
+        <PageDescription>
+          Learn more about CreerWebConsulting, our expertise, and our approach to delivering exceptional technology solutions for our clients.
+        </PageDescription>
+      </PageHeader>
       
       <HeroSection>
-        <Grid columns={2} mobileColumns={1}>
-          <Grid.Item span={1}>
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <HeroTitle>Expertise You Can Trust</HeroTitle>
-              <HeroDescription>
-                CreerWebConsulting was founded by Spencer Creer, an AWS-certified software engineer
-                with a Master's degree in Computer Science from Arizona State University.
-                Spencer combines academic knowledge with practical expertise to deliver
-                exceptional technology solutions for businesses of all sizes.
-              </HeroDescription>
-              <HeroDescription>
-                Our mission is to help businesses leverage technology to improve operations, enhance customer
-                experiences, and drive growth. We believe in building long-term relationships with our clients
-                by delivering high-quality solutions that address their specific needs.
-              </HeroDescription>
-            </motion.div>
-          </Grid.Item>
-          <Grid.Item span={1}>
-            <HeroImage>
-              <motion.img 
-                src="/images/about/image.png" 
-                alt="Spencer Creer"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              />
-            </HeroImage>
-          </Grid.Item>
-        </Grid>
+        <HeroContent>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <HeroTitle>Expertise You Can Trust</HeroTitle>
+            <HeroDescription>
+              CreerWebConsulting was founded by Spencer Creer, an AWS-certified software engineer
+              with a Master's degree in Computer Science from Arizona State University.
+              Spencer combines academic knowledge with practical expertise to deliver
+              exceptional technology solutions for businesses of all sizes.
+            </HeroDescription>
+            <HeroDescription>
+              Our mission is to help businesses leverage technology to improve operations, enhance customer
+              experiences, and drive growth. We believe in building long-term relationships with our clients
+              by delivering high-quality solutions that address their specific needs.
+            </HeroDescription>
+          </motion.div>
+        </HeroContent>
+        <HeroImage>
+          <motion.img 
+            src="/images/about/image.png" 
+            alt="Spencer Creer"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          />
+        </HeroImage>
       </HeroSection>
       
-      <Section bgColor="var(--background-alt)" padding="4rem 0">
-        <Grid columns={4} tabletColumns={2} mobileColumns={1} gap="2rem">
-          <Grid.Item span={1}>
-            <StatCard>
-              <StatIcon>
-                <FaLaptopCode />
-              </StatIcon>
-              <StatNumber>4+</StatNumber>
-              <StatTitle>Years Experience</StatTitle>
-            </StatCard>
-          </Grid.Item>
+      <StatsSection>
+        <StatsContainer>
+          <StatCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <StatNumber>4+</StatNumber>
+            <StatTitle>Years Experience</StatTitle>
+          </StatCard>
           
-          <Grid.Item span={1}>
-            <StatCard>
-              <StatIcon>
-                <FaAws />
-              </StatIcon>
-              <StatNumber>1</StatNumber>
-              <StatTitle>AWS Certification</StatTitle>
-            </StatCard>
-          </Grid.Item>
+          <StatCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <StatNumber>1</StatNumber>
+            <StatTitle>AWS Certification</StatTitle>
+          </StatCard>
           
-          <Grid.Item span={1}>
-            <StatCard>
-              <StatIcon>
-                <FaUniversity />
-              </StatIcon>
-              <StatNumber>MSc</StatNumber>
-              <StatTitle>Computer Science</StatTitle>
-            </StatCard>
-          </Grid.Item>
+          <StatCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <StatNumber>MSc</StatNumber>
+            <StatTitle>Computer Science</StatTitle>
+          </StatCard>
           
-          <Grid.Item span={1}>
-            <StatCard>
-              <StatIcon>
-                <FaAward />
-              </StatIcon>
-              <StatNumber>20+</StatNumber>
-              <StatTitle>Projects Completed</StatTitle>
-            </StatCard>
-          </Grid.Item>
-        </Grid>
-      </Section>
+          <StatCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <StatNumber>20+</StatNumber>
+            <StatTitle>Projects Completed</StatTitle>
+          </StatCard>
+        </StatsContainer>
+      </StatsSection>
       
-      <Section title="Education & Experience" padding="5rem 0">
-        <Grid columns={2} mobileColumns={1} gap="3rem">
+      <QualificationsSection>
+        <SectionTitle>Education & <span>Experience</span></SectionTitle>
+        <QualificationsContainer>
           <QualificationColumn>
             <QualificationTitle>
-              <FaUniversity /> Education
+              Education
             </QualificationTitle>
             
             <QualificationItem
@@ -394,7 +377,7 @@ const About = () => {
           
           <QualificationColumn>
             <QualificationTitle>
-              <FaLaptopCode /> Experience
+              Experience
             </QualificationTitle>
             
             <QualificationItem
@@ -429,63 +412,61 @@ const About = () => {
               </QualificationItemDescription>
             </QualificationItem>
           </QualificationColumn>
-        </Grid>
-      </Section>
+        </QualificationsContainer>
+      </QualificationsSection>
       
-      <Section title="Our Values" bgColor="var(--background-alt)" padding="5rem 0">
-        <Grid columns={3} tabletColumns={2} mobileColumns={1} gap="2rem">
-          <Grid.Item span={1}>
-            <ValueCard>
-              <StatIcon>
-                <FaAward />
-              </StatIcon>
-              <ValueTitle>Excellence</ValueTitle>
-              <ValueDescription>
-                We strive for excellence in everything we do, from code quality to client communication.
-                Our commitment to high standards ensures we deliver solutions that exceed expectations.
-              </ValueDescription>
-            </ValueCard>
-          </Grid.Item>
+      <ValuesSection>
+        <SectionTitle>Our <span>Values</span></SectionTitle>
+        <ValuesContainer>
+          <ValueCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <ValueTitle>Excellence</ValueTitle>
+            <ValueDescription>
+              We strive for excellence in everything we do, from code quality to client communication.
+              Our commitment to high standards ensures we deliver solutions that exceed expectations.
+            </ValueDescription>
+          </ValueCard>
           
-          <Grid.Item span={1}>
-            <ValueCard>
-              <StatIcon>
-                <FaLightbulb />
-              </StatIcon>
-              <ValueTitle>Innovation</ValueTitle>
-              <ValueDescription>
-                We embrace new technologies and approaches to solve complex problems.
-                Our innovative mindset helps clients stay ahead in a rapidly evolving digital landscape.
-              </ValueDescription>
-            </ValueCard>
-          </Grid.Item>
+          <ValueCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <ValueTitle>Innovation</ValueTitle>
+            <ValueDescription>
+              We embrace new technologies and approaches to solve complex problems.
+              Our innovative mindset helps clients stay ahead in a rapidly evolving digital landscape.
+            </ValueDescription>
+          </ValueCard>
           
-          <Grid.Item span={1}>
-            <ValueCard>
-              <StatIcon>
-                <FaHandshake />
-              </StatIcon>
-              <ValueTitle>Partnership</ValueTitle>
-              <ValueDescription>
-                We view our client relationships as partnerships. We're invested in your success
-                and work collaboratively to achieve your business goals through technology.
-              </ValueDescription>
-            </ValueCard>
-          </Grid.Item>
-        </Grid>
-      </Section>
+          <ValueCard
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <ValueTitle>Partnership</ValueTitle>
+            <ValueDescription>
+              We view our client relationships as partnerships. We're invested in your success
+              and work collaboratively to achieve your business goals through technology.
+            </ValueDescription>
+          </ValueCard>
+        </ValuesContainer>
+      </ValuesSection>
       
-      <Section bgColor="var(--secondary)" padding="4rem 0">
-        <CTASection>
-          <CTATitle>Ready to Work Together?</CTATitle>
-          <CTADescription>
-            Let's discuss how CreerWebConsulting can help your business leverage technology
-            to achieve your goals and drive growth.
-          </CTADescription>
-          <Button primary large to="/contact">Get in Touch</Button>
-        </CTASection>
-      </Section>
-      </Section>
+      <CTASection>
+        <CTATitle>Ready to Work Together?</CTATitle>
+        <CTADescription>
+          Let's discuss how CreerWebConsulting can help your business leverage technology
+          to achieve your goals and drive growth.
+        </CTADescription>
+        <Button primary large to="/contact">Get in Touch</Button>
+      </CTASection>
     </AboutContainer>
   );
 };
