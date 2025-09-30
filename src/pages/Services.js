@@ -1,34 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-// import { FaCode, FaCloud, FaRobot, FaMobile, FaPalette } from 'react-icons/fa';
-
-// Import common components
 import Button from '../components/common/Button';
-
-const ServicesContainer = styled.div`
-  padding: 120px 2rem 5rem;
-`;
-
-const PageHeader = styled.div`
-  text-align: center;
-  margin-bottom: 4rem;
-`;
-
-const PageTitle = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  
-  span {
-    color: #4a90e2;
-  }
-`;
-
-const PageDescription = styled.p`
-  max-width: 700px;
-  margin: 0 auto;
-  color: #666;
-`;
+import { Container, PageHeader, PageTitle, PageDescription } from '../styles/commonStyles';
 
 const ServiceSection = styled.section`
   max-width: 1200px;
@@ -40,10 +14,7 @@ const ServiceSection = styled.section`
   
   &:nth-child(even) {
     direction: rtl;
-  }
-  
-  &:nth-child(even) > div {
-    direction: ltr;
+    > div { direction: ltr; }
   }
   
   @media (max-width: 768px) {
@@ -51,8 +22,6 @@ const ServiceSection = styled.section`
     direction: ltr !important;
   }
 `;
-
-const ServiceContent = styled.div``;
 
 const ServiceTitle = styled.h2`
   font-size: 2rem;
@@ -68,18 +37,18 @@ const ServiceDescription = styled.p`
 const ServiceFeatures = styled.ul`
   list-style: none;
   margin-bottom: 2rem;
-`;
-
-const ServiceFeature = styled.li`
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
   
-  &:before {
-    content: '✓';
-    color: #4a90e2;
-    margin-right: 10px;
-    font-weight: bold;
+  li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    
+    &:before {
+      content: '✓';
+      color: #4a90e2;
+      margin-right: 10px;
+      font-weight: bold;
+    }
   }
 `;
 
@@ -102,38 +71,22 @@ const CTASection = styled.section`
   border-radius: 8px;
   max-width: 1200px;
   margin: 0 auto;
-`;
-
-const CTATitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-`;
-
-const CTADescription = styled.p`
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: #666;
-`;
-
-const CTAButton = styled.a`
-  display: inline-block;
-  background-color: #4a90e2;
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
   
-  &:hover {
-    background-color: #3a7bc8;
-    transform: translateY(-3px);
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #666;
   }
 `;
 
 const Services = () => {
   return (
-    <ServicesContainer>
+    <Container>
       <PageHeader>
         <PageTitle>Our <span>Services</span></PageTitle>
         <PageDescription>
@@ -142,29 +95,27 @@ const Services = () => {
       </PageHeader>
       
       <ServiceSection id="web-development">
-        <ServiceContent>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <ServiceTitle>Web App Development</ServiceTitle>
-            <ServiceDescription>
-              We build custom web applications that are scalable, secure, and user-friendly.
-              Using modern frameworks and best practices, we create solutions that help your
-              business operate more efficiently and provide exceptional experiences to your users.
-            </ServiceDescription>
-            <ServiceFeatures>
-              <ServiceFeature>Custom web application development</ServiceFeature>
-              <ServiceFeature>Frontend development with React, Angular, or Vue</ServiceFeature>
-              <ServiceFeature>Backend development with Node.js, Python, or Java</ServiceFeature>
-              <ServiceFeature>Database design and optimization</ServiceFeature>
-              <ServiceFeature>API development and integration</ServiceFeature>
-              <ServiceFeature>Progressive Web Apps (PWAs)</ServiceFeature>
-            </ServiceFeatures>
-          </motion.div>
-        </ServiceContent>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <ServiceTitle>Web App Development</ServiceTitle>
+          <ServiceDescription>
+            We build custom web applications that are scalable, secure, and user-friendly.
+            Using modern frameworks and best practices, we create solutions that help your
+            business operate more efficiently and provide exceptional experiences to your users.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <li>Custom web application development</li>
+            <li>Frontend development with React, Angular, or Vue</li>
+            <li>Backend development with Node.js, Python, or Java</li>
+            <li>Database design and optimization</li>
+            <li>API development and integration</li>
+            <li>Progressive Web Apps (PWAs)</li>
+          </ServiceFeatures>
+        </motion.div>
         <ServiceImage>
           <motion.img 
             src="/images/services/image.png" 
@@ -178,29 +129,27 @@ const Services = () => {
       </ServiceSection>
       
       <ServiceSection id="cloud-architecture">
-        <ServiceContent>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <ServiceTitle>Cloud Architecture</ServiceTitle>
-            <ServiceDescription>
-              As an AWS Certified Developer, we design and implement cloud solutions that
-              optimize performance, security, and cost-efficiency. We help businesses
-              leverage the power of cloud computing to scale operations and innovate faster.
-            </ServiceDescription>
-            <ServiceFeatures>
-              <ServiceFeature>AWS architecture design and implementation</ServiceFeature>
-              <ServiceFeature>Cloud migration strategies</ServiceFeature>
-              <ServiceFeature>Serverless application development</ServiceFeature>
-              <ServiceFeature>Infrastructure as Code (IaC)</ServiceFeature>
-              <ServiceFeature>DevOps and CI/CD pipeline setup</ServiceFeature>
-              <ServiceFeature>Cloud security and compliance</ServiceFeature>
-            </ServiceFeatures>
-          </motion.div>
-        </ServiceContent>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <ServiceTitle>Cloud Architecture</ServiceTitle>
+          <ServiceDescription>
+            As an AWS Certified Developer, we design and implement cloud solutions that
+            optimize performance, security, and cost-efficiency. We help businesses
+            leverage the power of cloud computing to scale operations and innovate faster.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <li>AWS architecture design and implementation</li>
+            <li>Cloud migration strategies</li>
+            <li>Serverless application development</li>
+            <li>Infrastructure as Code (IaC)</li>
+            <li>DevOps and CI/CD pipeline setup</li>
+            <li>Cloud security and compliance</li>
+          </ServiceFeatures>
+        </motion.div>
         <ServiceImage>
           <motion.img 
             src="/images/services/image.png" 
@@ -214,29 +163,27 @@ const Services = () => {
       </ServiceSection>
       
       <ServiceSection id="ai-integration">
-        <ServiceContent>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <ServiceTitle>AI Integration</ServiceTitle>
-            <ServiceDescription>
-              We help businesses implement cutting-edge AI solutions to automate processes,
-              gain valuable insights from data, and create intelligent applications that
-              provide competitive advantages in today's market.
-            </ServiceDescription>
-            <ServiceFeatures>
-              <ServiceFeature>Machine learning model integration</ServiceFeature>
-              <ServiceFeature>Natural Language Processing (NLP) solutions</ServiceFeature>
-              <ServiceFeature>Computer vision applications</ServiceFeature>
-              <ServiceFeature>Chatbot and virtual assistant development</ServiceFeature>
-              <ServiceFeature>Predictive analytics implementation</ServiceFeature>
-              <ServiceFeature>AI-powered recommendation systems</ServiceFeature>
-            </ServiceFeatures>
-          </motion.div>
-        </ServiceContent>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <ServiceTitle>AI Integration</ServiceTitle>
+          <ServiceDescription>
+            We help businesses implement cutting-edge AI solutions to automate processes,
+            gain valuable insights from data, and create intelligent applications that
+            provide competitive advantages in today's market.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <li>Machine learning model integration</li>
+            <li>Natural Language Processing (NLP) solutions</li>
+            <li>Computer vision applications</li>
+            <li>Chatbot and virtual assistant development</li>
+            <li>Predictive analytics implementation</li>
+            <li>AI-powered recommendation systems</li>
+          </ServiceFeatures>
+        </motion.div>
         <ServiceImage>
           <motion.img 
             src="/images/services/image.png" 
@@ -250,29 +197,27 @@ const Services = () => {
       </ServiceSection>
       
       <ServiceSection id="mobile-development">
-        <ServiceContent>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <ServiceTitle>Mobile Development</ServiceTitle>
-            <ServiceDescription>
-              We develop native and cross-platform mobile applications that provide
-              seamless experiences across all devices. Our mobile solutions help businesses
-              engage with customers and streamline operations on the go.
-            </ServiceDescription>
-            <ServiceFeatures>
-              <ServiceFeature>iOS and Android native app development</ServiceFeature>
-              <ServiceFeature>Cross-platform development with React Native or Flutter</ServiceFeature>
-              <ServiceFeature>Mobile UI/UX design</ServiceFeature>
-              <ServiceFeature>App Store optimization and deployment</ServiceFeature>
-              <ServiceFeature>Mobile app testing and quality assurance</ServiceFeature>
-              <ServiceFeature>App maintenance and support</ServiceFeature>
-            </ServiceFeatures>
-          </motion.div>
-        </ServiceContent>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <ServiceTitle>Mobile Development</ServiceTitle>
+          <ServiceDescription>
+            We develop native and cross-platform mobile applications that provide
+            seamless experiences across all devices. Our mobile solutions help businesses
+            engage with customers and streamline operations on the go.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <li>iOS and Android native app development</li>
+            <li>Cross-platform development with React Native or Flutter</li>
+            <li>Mobile UI/UX design</li>
+            <li>App Store optimization and deployment</li>
+            <li>Mobile app testing and quality assurance</li>
+            <li>App maintenance and support</li>
+          </ServiceFeatures>
+        </motion.div>
         <ServiceImage>
           <motion.img 
             src="/images/services/image.png" 
@@ -286,29 +231,27 @@ const Services = () => {
       </ServiceSection>
       
       <ServiceSection id="website-design">
-        <ServiceContent>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <ServiceTitle>Website Design & Development</ServiceTitle>
-            <ServiceDescription>
-              We create beautiful, responsive websites that represent your brand and
-              engage your audience. Our designs focus on user experience, performance,
-              and conversion optimization to help you achieve your business goals.
-            </ServiceDescription>
-            <ServiceFeatures>
-              <ServiceFeature>Responsive website design</ServiceFeature>
-              <ServiceFeature>WordPress development</ServiceFeature>
-              <ServiceFeature>E-commerce website development</ServiceFeature>
-              <ServiceFeature>Landing page optimization</ServiceFeature>
-              <ServiceFeature>SEO-friendly website structure</ServiceFeature>
-              <ServiceFeature>Website maintenance and support</ServiceFeature>
-            </ServiceFeatures>
-          </motion.div>
-        </ServiceContent>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <ServiceTitle>Website Design & Development</ServiceTitle>
+          <ServiceDescription>
+            We create beautiful, responsive websites that represent your brand and
+            engage your audience. Our designs focus on user experience, performance,
+            and conversion optimization to help you achieve your business goals.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <li>Responsive website design</li>
+            <li>WordPress development</li>
+            <li>E-commerce website development</li>
+            <li>Landing page optimization</li>
+            <li>SEO-friendly website structure</li>
+            <li>Website maintenance and support</li>
+          </ServiceFeatures>
+        </motion.div>
         <ServiceImage>
           <motion.img 
             src="/images/services/image.png" 
@@ -322,14 +265,14 @@ const Services = () => {
       </ServiceSection>
       
       <CTASection>
-        <CTATitle>Ready to Get Started?</CTATitle>
-        <CTADescription>
+        <h2>Ready to Get Started?</h2>
+        <p>
           Contact us today to discuss your project requirements and how our services
           can help your business grow in the digital landscape.
-        </CTADescription>
+        </p>
         <Button primary large to="/contact">Schedule a Consultation</Button>
       </CTASection>
-    </ServicesContainer>
+    </Container>
   );
 };
 

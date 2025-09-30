@@ -1,35 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
-// Import common components
 import Button from '../components/common/Button';
-
-const AboutContainer = styled.div`
-  padding: 120px 2rem 5rem;
-`;
-
-const PageHeader = styled.div`
-  text-align: center;
-  margin-bottom: 4rem;
-`;
-
-const PageTitle = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  
-  span {
-    color: #4a90e2;
-  }
-`;
-
-const PageDescription = styled.p`
-  max-width: 700px;
-  margin: 0 auto;
-  color: #666;
-`;
-
-// Hero Section
+import { Container, PageHeader, PageTitle, PageDescription, SectionTitle } from '../styles/commonStyles';
 const HeroSection = styled.section`
   max-width: 1200px;
   margin: 0 auto 5rem;
@@ -117,15 +90,6 @@ const QualificationsSection = styled.section`
   margin: 0 auto 5rem;
 `;
 
-const SectionTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  
-  span {
-    color: #4a90e2;
-  }
-`;
 
 const QualificationsContainer = styled.div`
   display: grid;
@@ -232,25 +196,10 @@ const CTADescription = styled.p`
   color: white;
 `;
 
-const CTAButton = styled.a`
-  display: inline-block;
-  background-color: #4a90e2;
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: #3a7bc8;
-    transform: translateY(-3px);
-  }
-`;
 
 const About = () => {
   return (
-    <AboutContainer>
+    <Container>
       <PageHeader>
         <PageTitle>About <span>Us</span></PageTitle>
         <PageDescription>
@@ -467,7 +416,7 @@ const About = () => {
         </CTADescription>
         <Button primary large to="/contact">Get in Touch</Button>
       </CTASection>
-    </AboutContainer>
+    </Container>
   );
 };
 
