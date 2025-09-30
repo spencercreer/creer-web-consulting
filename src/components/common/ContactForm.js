@@ -89,6 +89,16 @@ const SuccessMessage = styled(motion.div)`
   text-align: center;
 `;
 
+const ErrorMessageBox = styled(motion.div)`
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid var(--error);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--error);
+  text-align: center;
+`;
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -101,6 +111,7 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   
   const validate = () => {
     const newErrors = {};
@@ -142,7 +153,7 @@ const ContactForm = () => {
     }
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     const validationErrors = validate();
@@ -152,10 +163,30 @@ const ContactForm = () => {
     }
     
     setIsSubmitting(true);
+    setSubmitError(null);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
+      
+      if (!apiEndpoint) {
+        throw new Error('API endpoint not configured');
+      }
+      
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message');
+      }
+      
+      // Success
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -165,11 +196,20 @@ const ContactForm = () => {
         message: ''
       });
       
-      // Reset success message after 5 seconds
+      // Reset success message after 8 seconds
       setTimeout(() => {
         setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
+      }, 8000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(
+        error.message || 
+        'An error occurred. Please try again or email us directly at spencercreer@gmail.com'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -184,8 +224,18 @@ const ContactForm = () => {
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
         >
-          Thank you for your message! We'll get back to you as soon as possible.
+          Thank you for contacting us! We've received your message and will get back to you soon.
         </SuccessMessage>
+      )}
+      
+      {submitError && (
+        <ErrorMessageBox
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+        >
+          {submitError}
+        </ErrorMessageBox>
       )}
       
       <Form onSubmit={handleSubmit}>
