@@ -118,7 +118,7 @@ const Services = () => {
         </motion.div>
         <ServiceImage>
           <motion.img 
-            src="/images/services/image.png" 
+            src="/images/services/web_dev.png" 
             alt="Web Development"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -152,7 +152,7 @@ const Services = () => {
         </motion.div>
         <ServiceImage>
           <motion.img 
-            src="/images/services/image.png" 
+            src="/images/services/cloud_arch.png" 
             alt="Cloud Architecture"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -186,7 +186,7 @@ const Services = () => {
         </motion.div>
         <ServiceImage>
           <motion.img 
-            src="/images/services/image.png" 
+            src="/images/services/ai.png" 
             alt="AI Integration"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -220,7 +220,7 @@ const Services = () => {
         </motion.div>
         <ServiceImage>
           <motion.img 
-            src="/images/services/image.png" 
+            src="/images/services/mobile_dev.png" 
             alt="Mobile Development"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -254,7 +254,7 @@ const Services = () => {
         </motion.div>
         <ServiceImage>
           <motion.img 
-            src="/images/services/image.png" 
+            src="/images/services/web_design.png" 
             alt="Website Design"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}

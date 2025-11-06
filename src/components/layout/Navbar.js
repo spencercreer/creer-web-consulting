@@ -25,14 +25,21 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
-  color: ${props => props.scrolled ? '#2a3f54' : '#ffffff'};
-  font-size: 1.8rem;
-  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
   
-  span {
-    color: #4a90e2;
+  img {
+    height: 40px;
+    transition: all 0.3s ease;
+    filter: ${props => !props.scrolled && props.isHomePage ? 'brightness(0) invert(1)' : 'none'};
+  }
+  
+  @media (max-width: 768px) {
+    img {
+      height: 32px;
+    }
   }
 `;
 
@@ -143,8 +150,8 @@ const Navbar = ({ scrolled }) => {
 
   return (
     <Nav scrolled={scrolled} isHomePage={isHomePage}>
-      <Logo to="/" scrolled={scrolled}>
-        Creer<span>Web</span>Consulting
+      <Logo to="/" scrolled={scrolled} isHomePage={isHomePage}>
+        <img src="/Logo_Full_Name.png" alt="CreerWebConsulting Logo" />
       </Logo>
       
       <MenuIcon onClick={() => setIsOpen(!isOpen)} scrolled={scrolled}>
