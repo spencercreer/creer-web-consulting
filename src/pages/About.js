@@ -19,8 +19,10 @@ const HeroSection = styled.section`
 const HeroContent = styled.div``;
 
 const HeroTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #272727;
+  font-weight: 400;
 `;
 
 const HeroDescription = styled.p`
@@ -43,7 +45,7 @@ const HeroImage = styled.div`
 
 // Stats Section
 const StatsSection = styled.section`
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 4rem 2rem;
   margin-bottom: 5rem;
 `;
@@ -65,11 +67,11 @@ const StatsContainer = styled.div`
 `;
 
 const StatCard = styled(motion.div)`
-  background-color: white;
+  background-color: #f9f9f9;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
+  border: 1px solid #f0f0f0;
 `;
 
 
@@ -109,11 +111,13 @@ const QualificationTitle = styled.h3`
 `;
 
 const QualificationItem = styled(motion.div)`
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #2A4FC9;
+  border-left: 3px solid #2A4FC9;
+  border: 1px solid #f0f0f0;
+  border-left: 3px solid #2A4FC9;
 `;
 
 const QualificationItemTitle = styled.h4`
@@ -158,10 +162,11 @@ const ValuesContainer = styled.div`
 `;
 
 const ValueCard = styled(motion.div)`
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
+  border: 1px solid #f0f0f0;
 `;
 
 const ValueTitle = styled.h3`
@@ -204,21 +209,14 @@ const About = () => {
 
   return (
     <Container>
-      <PageHeader>
-        <PageTitle>About <span>Us</span></PageTitle>
-        <PageDescription>
-          Learn more about CreerWebConsulting, our expertise, and our approach to delivering exceptional technology solutions for our clients.
-        </PageDescription>
-      </PageHeader>
-      
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        style={{ maxWidth: '900px', margin: '0 auto 5rem', textAlign: 'center' }}
+        style={{ maxWidth: '900px', margin: '0 auto 5rem', textAlign: 'left' }}
       >
-        <HeroTitle>Expertise You Can Trust</HeroTitle>
+        <HeroTitle>About Us</HeroTitle>
         <HeroDescription>
           CreerWebConsulting was founded by Spencer Creer, an AWS-certified software engineer
           with a Master's degree in Computer Science from Arizona State University.

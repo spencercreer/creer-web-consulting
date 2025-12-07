@@ -209,7 +209,9 @@ const AboutContent = styled.div``;
 
 const AboutTitle = styled.h2`
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  color: #272727;
+  font-weight: 400;
   
   span {
     color: #2A4FC9;

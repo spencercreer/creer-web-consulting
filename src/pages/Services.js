@@ -23,9 +23,29 @@ const ServiceSection = styled.section`
   }
 `;
 
+const PageTitleStyled = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #272727;
+  font-weight: 400;
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+`;
+
+const PageSubtitle = styled.p`
+  font-size: 1.1rem;
+  color: #909090;
+  margin-bottom: 5rem;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+`;
+
 const ServiceTitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: #272727;
+  font-weight: 400;
 `;
 
 const ServiceDescription = styled.p`
@@ -66,7 +86,7 @@ const ServiceImage = styled.div`
 
 const CTASection = styled.section`
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #2A4FC9 0%, #7F97E8 100%);
   text-align: center;
   border-radius: 8px;
   max-width: 1200px;
@@ -75,12 +95,14 @@ const CTASection = styled.section`
   h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    color: white;
   }
   
   p {
     max-width: 700px;
     margin: 0 auto 2rem;
-    color: #909090;
+    color: white;
+    opacity: 0.9;
   }
 `;
 
@@ -91,12 +113,10 @@ const Services = () => {
 
   return (
     <Container>
-      <PageHeader>
-        <PageTitle>Our <span>Services</span></PageTitle>
-        <PageDescription>
-          We provide comprehensive technology solutions tailored to your business needs, from web development and cloud architecture to AI integration and mobile applications.
-        </PageDescription>
-      </PageHeader>
+      <PageTitleStyled>Our Services</PageTitleStyled>
+      <PageSubtitle>
+        We provide comprehensive technology solutions tailored to your business needs, from web development and cloud architecture to AI integration and mobile applications.
+      </PageSubtitle>
       
       <ServiceSection id="web-development">
         <motion.div
