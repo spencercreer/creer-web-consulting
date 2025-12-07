@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -277,6 +277,10 @@ const CTADescription = styled.p`
 `;
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'CWC';
+  }, []);
+
   return (
     <>
       <HeroSection>

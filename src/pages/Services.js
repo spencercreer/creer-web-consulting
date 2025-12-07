@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from '../components/common/Button';
@@ -85,6 +85,10 @@ const CTASection = styled.section`
 `;
 
 const Services = () => {
+  useEffect(() => {
+    document.title = 'CWC | Services';
+  }, []);
+
   return (
     <Container>
       <PageHeader>

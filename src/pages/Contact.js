@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -122,6 +122,10 @@ const ContactSection = styled.section`
 `;
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = 'CWC | Contact';
+  }, []);
+
   return (
     <Container>
       <PageHeader>

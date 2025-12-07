@@ -15,9 +15,8 @@ const Nav = styled.nav`
   z-index: 1000;
   transition: all 0.3s ease-in-out;
   background-color: ${props => 
-    props.scrolled ? '#ffffff' : 
-    props.isHomePage ? 'transparent' : 'rgba(42, 79, 201, 0.9)'};
-  box-shadow: ${props => props.scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
+    props.isHomePage && !props.scrolled ? 'transparent' : '#ffffff'};
+  box-shadow: ${props => (props.scrolled || !props.isHomePage) ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
 
   @media (max-width: 768px) {
     padding: 1rem;
@@ -25,7 +24,7 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
-  color: ${props => props.scrolled ? '#272727' : '#ffffff'};
+  color: ${props => (props.isHomePage && !props.scrolled) ? '#ffffff' : '#272727'};
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
@@ -36,7 +35,7 @@ const Logo = styled(Link)`
   img {
     height: 40px;
     transition: all 0.3s ease;
-    filter: ${props => !props.scrolled && props.isHomePage ? 'brightness(0) invert(1)' : 'none'};
+    filter: ${props => props.isHomePage && !props.scrolled ? 'brightness(0) invert(1)' : 'none'};
   }
   
   @media (max-width: 768px) {
@@ -50,7 +49,7 @@ const MenuIcon = styled.div`
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: ${props => props.scrolled ? '#272727' : '#ffffff'};
+  color: ${props => (props.isHomePage && !props.scrolled) ? '#ffffff' : '#272727'};
   
   @media (max-width: 768px) {
     display: block;
@@ -84,7 +83,7 @@ const NavItem = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: ${props => props.scrolled ? '#272727' : '#ffffff'};
+  color: ${props => (props.isHomePage && !props.scrolled) ? '#ffffff' : '#272727'};
   text-decoration: none;
   font-weight: ${props => props.isActive ? '700' : '500'};
   padding: 0.5rem;
@@ -157,7 +156,7 @@ const Navbar = ({ scrolled }) => {
         <img src="/Logo_Full_Name.png" alt="CreerWebConsulting Logo" />
       </Logo>
       
-      <MenuIcon onClick={() => setIsOpen(!isOpen)} scrolled={scrolled}>
+      <MenuIcon onClick={() => setIsOpen(!isOpen)} scrolled={scrolled} isHomePage={isHomePage}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </MenuIcon>
       
@@ -165,7 +164,8 @@ const Navbar = ({ scrolled }) => {
         <NavItem>
           <NavLink 
             to="/" 
-            scrolled={scrolled} 
+            scrolled={scrolled}
+            isHomePage={isHomePage}
             onClick={() => {
               setIsOpen(false)
               setTimeout(() => window.scrollTo(0, 0), 100)
@@ -178,7 +178,8 @@ const Navbar = ({ scrolled }) => {
         <NavItem>
           <NavLink 
             to="/services" 
-            scrolled={scrolled} 
+            scrolled={scrolled}
+            isHomePage={isHomePage}
             onClick={() => {
               setIsOpen(false)
               setTimeout(() => window.scrollTo(0, 0), 100)
@@ -191,7 +192,8 @@ const Navbar = ({ scrolled }) => {
         <NavItem>
           <NavLink 
             to="/about" 
-            scrolled={scrolled} 
+            scrolled={scrolled}
+            isHomePage={isHomePage}
             onClick={() => {
               setIsOpen(false)
               setTimeout(() => window.scrollTo(0, 0), 100)

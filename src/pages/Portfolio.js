@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -175,6 +175,10 @@ const CTAButton = styled.a`
 `;
 
 const Portfolio = () => {
+  useEffect(() => {
+    document.title = 'CWC | Portfolio';
+  }, []);
+
   const [filter, setFilter] = useState('all');
   
   // Define category labels for display

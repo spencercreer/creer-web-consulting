@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from '../components/common/Button';
@@ -198,6 +198,10 @@ const CTADescription = styled.p`
 
 
 const About = () => {
+  useEffect(() => {
+    document.title = 'CWC | About';
+  }, []);
+
   return (
     <Container>
       <PageHeader>
