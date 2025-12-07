@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { Slant as Hamburger } from 'hamburger-react';
 
 const Nav = styled.nav`
   display: flex;
@@ -12,7 +12,7 @@ const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1001;
   transition: all 0.3s ease-in-out;
   background-color: ${props => 
     props.isHomePage && !props.scrolled ? 'transparent' : '#ffffff'};
@@ -31,6 +31,8 @@ const Logo = styled(Link)`
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1002;
   
   img {
     height: 40px;
@@ -47,12 +49,26 @@ const Logo = styled(Link)`
 
 const MenuIcon = styled.div`
   display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: ${props => (props.isHomePage && !props.scrolled) ? '#ffffff' : '#272727'};
+  z-index: 1002;
+  position: relative;
   
   @media (max-width: 768px) {
     display: block;
+  }
+`;
+
+const Backdrop = styled.div`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
   }
 `;
 
@@ -63,14 +79,17 @@ const NavMenu = styled.ul`
   
   @media (max-width: 768px) {
     flex-direction: column;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100vh;
     background-color: #ffffff;
     transition: all 0.3s ease-in-out;
-    padding: 2rem 0;
+    padding: 5rem 2rem 2rem 2rem;
+    z-index: 999;
+    box-shadow: ${({ isOpen }) => (isOpen ? '2px 0 10px rgba(0, 0, 0, 0.1)' : 'none')};
+    overflow-y: auto;
   }
 `;
 
@@ -78,7 +97,14 @@ const NavItem = styled.li`
   margin: 0 1rem;
   
   @media (max-width: 768px) {
-    margin: 1rem 0;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    
+    &:last-child {
+      border-bottom: none;
+      margin-top: 1rem;
+    }
   }
 `;
 
@@ -111,11 +137,19 @@ const NavLink = styled(Link)`
   }
   
   @media (max-width: 768px) {
+    display: block;
+    width: 100%;
     color: #272727;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: left;
     
     &:after {
-      bottom: -5px;
+      display: none;
+    }
+    
+    &:hover {
+      background-color: #f5f5f5;
     }
   }
 `;
@@ -138,8 +172,8 @@ const ContactButton = styled(Link)`
   }
   
   @media (max-width: 768px) {
-    margin-top: 1rem;
-    width: 80%;
+    display: block;
+    width: 100%;
     text-align: center;
     padding: 0.8rem;
   }
@@ -150,17 +184,41 @@ const Navbar = ({ scrolled }) => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isOpen && !e.target.closest('ul') && !e.target.closest('.hamburger-react')) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <Nav scrolled={scrolled} isHomePage={isHomePage}>
-      <Logo to="/" scrolled={scrolled} isHomePage={isHomePage}>
-        <img src="/Logo_Full_Name.png" alt="CreerWebConsulting Logo" />
-      </Logo>
-      
-      <MenuIcon onClick={() => setIsOpen(!isOpen)} scrolled={scrolled} isHomePage={isHomePage}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </MenuIcon>
-      
-      <NavMenu isOpen={isOpen}>
+    <>
+      <Backdrop isOpen={isOpen} onClick={() => setIsOpen(false)} />
+      <Nav scrolled={scrolled} isHomePage={isHomePage}>
+        <Logo to="/" scrolled={scrolled} isHomePage={isHomePage}>
+          <img src="/Logo_Full_Name.png" alt="CreerWebConsulting Logo" />
+        </Logo>
+        
+        <MenuIcon scrolled={scrolled} isHomePage={isHomePage}>
+          <Hamburger
+            toggled={isOpen}
+            toggle={setIsOpen}
+            size={24}
+            color={(isHomePage && !scrolled) ? '#ffffff' : '#272727'}
+            duration={0.3}
+          />
+        </MenuIcon>
+        
+        <NavMenu isOpen={isOpen}>
         <NavItem>
           <NavLink 
             to="/" 
@@ -222,8 +280,9 @@ const Navbar = ({ scrolled }) => {
             Contact Us
           </ContactButton>
         </NavItem>
-      </NavMenu>
-    </Nav>
+        </NavMenu>
+      </Nav>
+    </>
   );
 };
 
