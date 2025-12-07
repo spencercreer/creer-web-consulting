@@ -230,7 +230,7 @@ const About = () => {
         </HeroDescription>
       </motion.div>
       
-      <StatsSection>
+      {/* <StatsSection>
         <StatsContainer>
           <StatCard
             initial={{ opacity: 0, y: 30 }}
@@ -272,9 +272,9 @@ const About = () => {
             <StatTitle>Projects Completed</StatTitle>
           </StatCard>
         </StatsContainer>
-      </StatsSection>
+      </StatsSection> */}
       
-      <QualificationsSection>
+      {/* <QualificationsSection>
         <SectionTitle>Education & <span>Experience</span></SectionTitle>
         <QualificationsContainer>
           <QualificationColumn>
@@ -351,7 +351,7 @@ const About = () => {
             </QualificationItem>
           </QualificationColumn>
         </QualificationsContainer>
-      </QualificationsSection>
+      </QualificationsSection> */}
       
       <ValuesSection>
         <SectionTitle>Our <span>Values</span></SectionTitle>
