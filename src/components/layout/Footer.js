@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
-  background-color: #2a3f54;
+  background: linear-gradient(135deg, #272727 0%, #2A4FC9 100%);
   color: #ffffff;
   padding: 4rem 2rem 2rem;
 `;
@@ -25,6 +25,8 @@ const FooterTitle = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   position: relative;
+  color: #FFFFFF;
+  font-weight: 600;
   
   &:after {
     content: '';
@@ -33,7 +35,7 @@ const FooterTitle = styled.h3`
     bottom: -0.5rem;
     width: 50px;
     height: 2px;
-    background-color: #4a90e2;
+    background-color: #FFFFFF;
   }
 `;
 
@@ -57,7 +59,7 @@ const FooterLink = styled(Link)`
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   
   &:hover {
-    color: #4a90e2;
+    color: #FFFFFF;
     transform: translateX(5px);
     opacity: 1;
   }
@@ -73,7 +75,7 @@ const ContactItem = styled.div`
   
   svg {
     margin-right: 10px;
-    color: #4a90e2;
+    color: #FFFFFF;
   }
 `;
 
@@ -90,12 +92,13 @@ const SocialIcon = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #3a4f65;
+  background-color: rgba(255, 255, 255, 0.15);
   color: white;
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: #4a90e2;
+    background-color: #FFFFFF;
+    color: #2A4FC9;
     transform: translateY(-3px);
   }
 `;
@@ -157,7 +160,7 @@ const Footer = () => {
           <FooterTitle>Contact Us</FooterTitle>
           <ContactItem>
             <FaEnvelope />
-            <span>info@creerwebconsulting.com</span>
+            <span>spencer@creerwebconsulting.com</span>
           </ContactItem>
           <ContactItem>
             <FaPhone />

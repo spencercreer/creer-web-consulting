@@ -13,8 +13,8 @@ import Button from '../components/common/Button';
 // Hero Section
 const HeroSection = styled.section`
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('/images/hero-bg.png') no-repeat center center/cover;
+  background: linear-gradient(135deg, #2A4FC9 0%, #7F97E8 100%);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,14 +22,38 @@ const HeroSection = styled.section`
   text-align: center;
   color: white;
   padding: 0 2rem;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+    opacity: 0.3;
+  }
+  
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 const HeroTitle = styled(motion.h1)`
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
+  font-weight: 400;
   
   span {
-    color: #4a90e2;
+    color: #FFFFFF;
   }
   
   @media (max-width: 768px) {
@@ -60,8 +84,8 @@ const ButtonGroup = styled(motion.div)`
 `;
 
 const PrimaryButton = styled(Link)`
-  background-color: #4a90e2;
-  color: white;
+  background-color: #FFFFFF;
+  color: #2A4FC9;
   padding: 0.8rem 2rem;
   border-radius: 4px;
   text-decoration: none;
@@ -69,7 +93,7 @@ const PrimaryButton = styled(Link)`
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: #3a7bc8;
+    background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-3px);
   }
 `;
@@ -102,7 +126,7 @@ const SectionTitle = styled.h2`
   margin-bottom: 1rem;
   
   span {
-    color: #4a90e2;
+    color: #2A4FC9;
   }
 `;
 
@@ -110,7 +134,7 @@ const SectionSubtitle = styled.p`
   text-align: center;
   max-width: 700px;
   margin: 0 auto 3rem;
-  color: #666;
+  color: #909090;
 `;
 
 const ServicesGrid = styled.div`
@@ -136,7 +160,7 @@ const ServiceCard = styled(motion.div)`
 
 const ServiceIcon = styled.div`
   font-size: 2.5rem;
-  color: #4a90e2;
+  color: #2A4FC9;
   margin-bottom: 1.5rem;
 `;
 
@@ -146,12 +170,12 @@ const ServiceTitle = styled.h3`
 `;
 
 const ServiceDescription = styled.p`
-  color: #666;
+  color: #909090;
   margin-bottom: 1.5rem;
 `;
 
 const ServiceLink = styled(Link)`
-  color: #4a90e2;
+  color: #2A4FC9;
   text-decoration: none;
   font-weight: 500;
   display: flex;
@@ -188,12 +212,12 @@ const AboutTitle = styled.h2`
   margin-bottom: 1.5rem;
   
   span {
-    color: #4a90e2;
+    color: #2A4FC9;
   }
 `;
 
 const AboutDescription = styled.p`
-  color: #666;
+  color: #909090;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 `;
@@ -210,7 +234,7 @@ const AboutListItem = styled.li`
   
   &:before {
     content: '✓';
-    color: #4a90e2;
+    color: #2A4FC9;
     margin-right: 10px;
     font-weight: bold;
   }
@@ -376,13 +400,14 @@ const Home = () => {
       </Section>
 
       <Section padding="5rem 0">
-        <Grid columns={2} mobileColumns={1} gap="3rem">
+        <Grid columns={1} mobileColumns={1} gap="3rem">
           <Grid.Item span={1}>
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}
             >
               <AboutTitle>About <span>CreerWebConsulting</span></AboutTitle>
               <AboutDescription>
@@ -395,26 +420,16 @@ const Home = () => {
                 in web development, cloud architecture, and AI integration, we bring expertise
                 and innovation to every project.
               </AboutDescription>
-              <AboutList>
+              <AboutList style={{ display: 'inline-block', textAlign: 'left' }}>
                 <AboutListItem>AWS Certified Developer</AboutListItem>
                 <AboutListItem>Master's in Computer Science</AboutListItem>
                 <AboutListItem>Professional Software Engineering Experience</AboutListItem>
                 <AboutListItem>End-to-End Development Solutions</AboutListItem>
               </AboutList>
-              <Button primary to="/about">Learn More About Us</Button>
+              <div style={{ marginTop: '2rem' }}>
+                <Button primary to="/about">Learn More About Us</Button>
+              </div>
             </motion.div>
-          </Grid.Item>
-          <Grid.Item span={1}>
-            <AboutImage>
-              <motion.img 
-                src="/images/about/image.png" 
-                alt="About CreerWebConsulting"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              />
-            </AboutImage>
           </Grid.Item>
         </Grid>
       </Section>

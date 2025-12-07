@@ -29,7 +29,7 @@ const ContactInfoTitle = styled.h2`
     bottom: -0.8rem;
     width: 50px;
     height: 2px;
-    background-color: #4a90e2;
+    background-color: #FFFFFF;
   }
 `;
 

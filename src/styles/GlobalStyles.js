@@ -2,13 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    /* Colors */
-    --primary: #4a90e2;
-    --primary-dark: #3a7bc8;
-    --secondary: #2a3f54;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --text-lighter: #999999;
+    /* Colors - Based on Style Guide */
+    --primary: #2A4FC9;
+    --primary-light: #7F97E8;
+    --secondary: #272727;
+    --text-dark: #272727;
+    --text-light: #909090;
+    --text-lighter: #909090;
     --background: #ffffff;
     --background-alt: #f8f9fa;
     --border: #e9ecef;
@@ -16,11 +16,14 @@ const GlobalStyles = createGlobalStyle`
     --error: #dc3545;
     --warning: #ffc107;
     
-    /* Typography */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    /* Typography - Based on Style Guide */
+    --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    --font-size-base: 1rem;
+    --font-size-base: 16px;
     --font-size-sm: 0.875rem;
+    --font-size-subheading: 18px;
+    --font-size-h2: 28px;
+    --font-size-h1: 40px;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.25rem;
     --font-size-2xl: 1.5rem;
@@ -59,27 +62,27 @@ const GlobalStyles = createGlobalStyle`
 
   /* Additional global styles that complement index.css */
   h1 {
-    font-size: var(--font-size-5xl);
-    font-weight: 700;
+    font-size: var(--font-size-h1);
+    font-weight: 400;
     line-height: 1.2;
     margin-bottom: var(--spacing-lg);
-    color: var(--secondary);
+    color: var(--text-dark);
   }
   
   h2 {
-    font-size: var(--font-size-4xl);
-    font-weight: 700;
+    font-size: var(--font-size-h2);
+    font-weight: 400;
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
-    color: var(--secondary);
+    color: var(--text-dark);
   }
   
   h3 {
-    font-size: var(--font-size-3xl);
-    font-weight: 600;
+    font-size: var(--font-size-subheading);
+    font-weight: 400;
     line-height: 1.3;
     margin-bottom: var(--spacing-md);
-    color: var(--secondary);
+    color: var(--text-dark);
   }
   
   h4 {
@@ -109,6 +112,8 @@ const GlobalStyles = createGlobalStyle`
   p {
     margin-bottom: var(--spacing-md);
     color: var(--text-dark);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
   }
   
   a {
@@ -116,7 +121,7 @@ const GlobalStyles = createGlobalStyle`
     transition: var(--transition-normal);
     
     &:hover {
-      color: var(--primary-dark);
+      color: var(--primary-light);
     }
   }
   

@@ -29,7 +29,7 @@ const ServiceTitle = styled.h2`
 `;
 
 const ServiceDescription = styled.p`
-  color: #666;
+  color: #909090;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 `;
@@ -45,7 +45,7 @@ const ServiceFeatures = styled.ul`
     
     &:before {
       content: '✓';
-      color: #4a90e2;
+      color: #2A4FC9;
       margin-right: 10px;
       font-weight: bold;
     }
@@ -80,7 +80,7 @@ const CTASection = styled.section`
   p {
     max-width: 700px;
     margin: 0 auto 2rem;
-    color: #666;
+    color: #909090;
   }
 `;
 

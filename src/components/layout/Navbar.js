@@ -16,7 +16,7 @@ const Nav = styled.nav`
   transition: all 0.3s ease-in-out;
   background-color: ${props => 
     props.scrolled ? '#ffffff' : 
-    props.isHomePage ? 'transparent' : 'rgba(42, 63, 84, 0.9)'};
+    props.isHomePage ? 'transparent' : 'rgba(42, 79, 201, 0.9)'};
   box-shadow: ${props => props.scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
 
   @media (max-width: 768px) {
@@ -25,6 +25,9 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
+  color: ${props => props.scrolled ? '#272727' : '#ffffff'};
+  font-size: 1.8rem;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
@@ -47,7 +50,7 @@ const MenuIcon = styled.div`
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: ${props => props.scrolled ? '#2a3f54' : '#ffffff'};
+  color: ${props => props.scrolled ? '#272727' : '#ffffff'};
   
   @media (max-width: 768px) {
     display: block;
@@ -81,7 +84,7 @@ const NavItem = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: ${props => props.scrolled ? '#2a3f54' : '#ffffff'};
+  color: ${props => props.scrolled ? '#272727' : '#ffffff'};
   text-decoration: none;
   font-weight: ${props => props.isActive ? '700' : '500'};
   padding: 0.5rem;
@@ -96,12 +99,12 @@ const NavLink = styled(Link)`
     transform: translateX(-50%);
     width: ${props => props.isActive ? '80%' : '0'};
     height: 2px;
-    background-color: #4a90e2;
+    background-color: #2A4FC9;
     transition: all 0.3s ease;
   }
   
   &:hover {
-    color: #4a90e2;
+    color: #2A4FC9;
     
     &:after {
       width: 80%;
@@ -109,7 +112,7 @@ const NavLink = styled(Link)`
   }
   
   @media (max-width: 768px) {
-    color: #2a3f54;
+    color: #272727;
     font-size: 1.2rem;
     
     &:after {
@@ -119,20 +122,20 @@ const NavLink = styled(Link)`
 `;
 
 const ContactButton = styled(Link)`
-  background-color: ${props => props.isActive ? '#3a7bc8' : '#4a90e2'};
+  background-color: ${props => props.isActive ? '#7F97E8' : '#2A4FC9'};
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: ${props => props.isActive ? '700' : '500'};
   transition: all 0.3s ease;
-  box-shadow: ${props => props.isActive ? '0 4px 12px rgba(74, 144, 226, 0.3)' : 'none'};
+  box-shadow: ${props => props.isActive ? '0 4px 12px rgba(42, 79, 201, 0.3)' : 'none'};
   position: relative;
   
   &:hover {
-    background-color: #3a7bc8;
+    background-color: #7F97E8;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 4px 12px rgba(42, 79, 201, 0.3);
   }
   
   @media (max-width: 768px) {

@@ -18,7 +18,7 @@ const ButtonStyles = css`
     border: none;
     
     &:hover {
-      background-color: var(--primary-dark);
+      background-color: var(--primary-light);
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
@@ -30,7 +30,7 @@ const ButtonStyles = css`
     border: 2px solid var(--primary);
     
     &:hover {
-      background-color: rgba(74, 144, 226, 0.1);
+      background-color: rgba(42, 79, 201, 0.1);
       transform: translateY(-3px);
     }
   `}

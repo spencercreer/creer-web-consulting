@@ -24,7 +24,7 @@ const HeroTitle = styled.h2`
 `;
 
 const HeroDescription = styled.p`
-  color: #666;
+  color: #909090;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 `;
@@ -76,11 +76,11 @@ const StatCard = styled(motion.div)`
 const StatNumber = styled.h3`
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #2a3f54;
+  color: #272727;
 `;
 
 const StatTitle = styled.p`
-  color: #666;
+  color: #909090;
   font-weight: 500;
 `;
 
@@ -113,7 +113,7 @@ const QualificationItem = styled(motion.div)`
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #4a90e2;
+  border-left: 4px solid #2A4FC9;
 `;
 
 const QualificationItemTitle = styled.h4`
@@ -122,19 +122,19 @@ const QualificationItemTitle = styled.h4`
 `;
 
 const QualificationItemSubtitle = styled.p`
-  color: #4a90e2;
+  color: #2A4FC9;
   font-weight: 500;
   margin-bottom: 0.5rem;
 `;
 
 const QualificationItemDate = styled.p`
-  color: #888;
+  color: #909090;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 `;
 
 const QualificationItemDescription = styled.p`
-  color: #666;
+  color: #909090;
 `;
 
 // Values Section
@@ -170,12 +170,12 @@ const ValueTitle = styled.h3`
 `;
 
 const ValueDescription = styled.p`
-  color: #666;
+  color: #909090;
 `;
 
 // CTA Section
 const CTASection = styled.section`
-  background-color: #2a3f54;
+  background: linear-gradient(135deg, #2A4FC9 0%, #7F97E8 100%);
   padding: 4rem 2rem;
   color: white;
   text-align: center;
@@ -207,39 +207,26 @@ const About = () => {
         </PageDescription>
       </PageHeader>
       
-      <HeroSection>
-        <HeroContent>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <HeroTitle>Expertise You Can Trust</HeroTitle>
-            <HeroDescription>
-              CreerWebConsulting was founded by Spencer Creer, an AWS-certified software engineer
-              with a Master's degree in Computer Science from Arizona State University.
-              Spencer combines academic knowledge with practical expertise to deliver
-              exceptional technology solutions for businesses of all sizes.
-            </HeroDescription>
-            <HeroDescription>
-              Our mission is to help businesses leverage technology to improve operations, enhance customer
-              experiences, and drive growth. We believe in building long-term relationships with our clients
-              by delivering high-quality solutions that address their specific needs.
-            </HeroDescription>
-          </motion.div>
-        </HeroContent>
-        <HeroImage>
-          <motion.img 
-            src="/images/about/image.png" 
-            alt="Spencer Creer"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          />
-        </HeroImage>
-      </HeroSection>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        style={{ maxWidth: '900px', margin: '0 auto 5rem', textAlign: 'center' }}
+      >
+        <HeroTitle>Expertise You Can Trust</HeroTitle>
+        <HeroDescription>
+          CreerWebConsulting was founded by Spencer Creer, an AWS-certified software engineer
+          with a Master's degree in Computer Science from Arizona State University.
+          Spencer combines academic knowledge with practical expertise to deliver
+          exceptional technology solutions for businesses of all sizes.
+        </HeroDescription>
+        <HeroDescription>
+          Our mission is to help businesses leverage technology to improve operations, enhance customer
+          experiences, and drive growth. We believe in building long-term relationships with our clients
+          by delivering high-quality solutions that address their specific needs.
+        </HeroDescription>
+      </motion.div>
       
       <StatsSection>
         <StatsContainer>

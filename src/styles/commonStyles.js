@@ -14,14 +14,14 @@ export const PageTitle = styled.h1`
   margin-bottom: 1rem;
   
   span {
-    color: #4a90e2;
+    color: #2A4FC9;
   }
 `;
 
 export const PageDescription = styled.p`
   max-width: 700px;
   margin: 0 auto;
-  color: #666;
+  color: #909090;
 `;
 
 export const SectionTitle = styled.h2`
@@ -30,6 +30,6 @@ export const SectionTitle = styled.h2`
   text-align: center;
   
   span {
-    color: #4a90e2;
+    color: #2A4FC9;
   }
 `;

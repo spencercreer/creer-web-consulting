@@ -61,7 +61,7 @@ const CardFooter = styled.div`
 
 const CardTag = styled.span`
   display: inline-block;
-  background-color: rgba(74, 144, 226, 0.1);
+  background-color: rgba(42, 79, 201, 0.1);
   color: var(--primary);
   padding: 0.25rem 0.75rem;
   border-radius: var(--border-radius-sm);
