@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import ContactForm from '../components/common/ContactForm';
 import { Container } from '../styles/commonStyles';
+// import ContactForm from '../components/common/ContactForm';
 
 const ContactInfo = styled.div`
   padding: 2rem 0;
@@ -157,17 +157,10 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <ContactForm 
-            fields={[
-              { name: 'name', label: 'Name', type: 'text', required: true },
-              { name: 'email', label: 'Email', type: 'email', required: true },
-              { name: 'phone', label: 'Phone (Optional)', type: 'tel', required: false },
-              { name: 'subject', label: 'Subject', type: 'text', required: true },
-              { name: 'message', label: 'Message', type: 'textarea', required: true }
-            ]}
-            submitButtonText="Submit"
-            successMessage="Thank you for your message! We will get back to you soon."
-          />
+          We’re excited to learn about your project and explore how we can help. Please email us at{' '}
+          <a href="mailto:spencercreer@gmail.com">spencercreer@gmail.com</a> or call{' '}
+          <a href="tel:+16025254634">(602) 525-4634</a>.
+          {/* <ContactForm /> */}
         </motion.div>
       </ContactSection>
     </Container>
