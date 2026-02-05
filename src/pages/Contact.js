@@ -150,18 +150,6 @@ const Contact = () => {
             </SocialLinks>
           </motion.div>
         </ContactInfo>
-        
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          We’re excited to learn about your project and explore how we can help. Please email us at{' '}
-          <a href="mailto:spencercreer@gmail.com">spencercreer@gmail.com</a> or call{' '}
-          <a href="tel:+16025254634">(602) 525-4634</a>.
-          {/* <ContactForm /> */}
-        </motion.div>
       </ContactSection>
     </Container>
   );
