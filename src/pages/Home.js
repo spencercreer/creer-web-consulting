@@ -31,14 +31,8 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-      linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-      linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
-      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-    opacity: 0.3;
+    background: none;
+    opacity: 0;
   }
   
   & > * {
@@ -415,7 +409,7 @@ const Home = () => {
               transition={{ duration: 0.5 }}
               style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}
             >
-              <AboutTitle>About <span>CreerWebConsulting</span></AboutTitle>
+              <AboutTitle>About <span>CWC</span></AboutTitle>
               <AboutDescription>
                 Founded by Spencer Creer, an AWS-certified software engineer,
                 CreerWebConsulting delivers high-quality technology
