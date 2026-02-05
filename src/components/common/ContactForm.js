@@ -209,7 +209,7 @@ const ContactForm = () => {
       console.error('Error submitting form:', error);
       setSubmitError(
         error.message || 
-        'An error occurred. Please try again or email us directly at spencercreer@gmail.com'
+        'An error occurred. Please try again or email us directly at spencer@creerwebconsulting.com'
       );
     } finally {
       setIsSubmitting(false);

@@ -126,8 +126,8 @@ const Contact = () => {
             
             <ContactItem>
               <img src="/icons/Envelope.svg" alt="Email" />
-              <ContactItemText href="mailto:spencercreer@gmail.com">
-                spencercreer@gmail.com
+              <ContactItemText href="mailto:spencer@creerwebconsulting.com">
+                spencer@creerwebconsulting.com
               </ContactItemText>
             </ContactItem>
             
