@@ -406,7 +406,7 @@ const About = () => {
           Let's discuss how CreerWebConsulting can help your business leverage technology
           to achieve your goals and drive growth.
         </CTADescription>
-        <Button primary large to="/contact">Get in Touch</Button>
+        <Button primary large to="/contact" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Get in Touch</Button>
       </CTASection>
     </Container>
   );

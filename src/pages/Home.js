@@ -423,11 +423,13 @@ const Home = () => {
               <AboutList style={{ display: 'inline-block', textAlign: 'left' }}>
                 <AboutListItem>AWS Certified Developer</AboutListItem>
                 <AboutListItem>Master's in Computer Science</AboutListItem>
-                <AboutListItem>Professional Software Engineering Experience</AboutListItem>
+                <AboutListItem>Full-Stack Development Experience</AboutListItem>
+                <AboutListItem>Cloud Architecture Expertise</AboutListItem>
+                <AboutListItem>AI Integration Solutions</AboutListItem>
                 <AboutListItem>End-to-End Development Solutions</AboutListItem>
               </AboutList>
               <div style={{ marginTop: '2rem' }}>
-                <Button primary to="/about">Learn More About Us</Button>
+                <Button primary to="/about" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Learn More About Us</Button>
               </div>
             </motion.div>
           </Grid.Item>

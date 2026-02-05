@@ -294,7 +294,7 @@ const Services = () => {
           Contact us today to discuss your project requirements and how our services
           can help your business grow in the digital landscape.
         </p>
-        <Button primary large to="/contact">Schedule a Consultation</Button>
+        <Button primary large to="/contact" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Schedule a Consultation</Button>
       </CTASection>
     </Container>
   );
