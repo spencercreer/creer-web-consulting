@@ -204,7 +204,15 @@ const Navbar = ({ scrolled }) => {
     <>
       <Backdrop isOpen={isOpen} onClick={() => setIsOpen(false)} />
       <Nav scrolled={scrolled} isHomePage={isHomePage}>
-        <Logo to="/" scrolled={scrolled} isHomePage={isHomePage}>
+        <Logo
+          to="/"
+          scrolled={scrolled}
+          isHomePage={isHomePage}
+          onClick={() => {
+            setIsOpen(false);
+            setTimeout(() => window.scrollTo(0, 0), 100);
+          }}
+        >
           <img src="/Logo_Full_Name.png" alt="CreerWebConsulting Logo" />
         </Logo>
         
