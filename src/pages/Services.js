@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from '../components/common/Button';
@@ -107,9 +108,23 @@ const CTASection = styled.section`
 `;
 
 const Services = () => {
+  const location = useLocation();
+
   useEffect(() => {
     document.title = 'CWC | Services';
   }, []);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const id = location.hash.replace('#', '');
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView();
+      }
+    }, 100);
+  }, [location.hash]);
 
   return (
     <Container>
