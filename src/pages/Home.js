@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaCode, FaCloud, FaRobot, FaMobile, FaPalette } from 'react-icons/fa';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 // Import common components
 import Section from '../components/common/Section';
@@ -273,6 +274,8 @@ const CTADescription = styled.p`
 `;
 
 const Home = () => {
+  const scrollToTop = useScrollToTop();
+
   useEffect(() => {
     document.title = 'CWC';
   }, []);
@@ -429,7 +432,7 @@ const Home = () => {
                 <AboutListItem>End-to-End Development Solutions</AboutListItem>
               </AboutList>
               <div style={{ marginTop: '2rem' }}>
-                <Button primary to="/about" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Learn More About Us</Button>
+                <Button primary to="/about" onClick={scrollToTop}>Learn More About Us</Button>
               </div>
             </motion.div>
           </Grid.Item>

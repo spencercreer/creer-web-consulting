@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const FooterContainer = styled.footer`
   background: linear-gradient(135deg, #272727 0%, #2A4FC9 100%);
@@ -116,6 +117,7 @@ const Copyright = styled.div`
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const scrollToTop = useScrollToTop();
   
   return (
     <FooterContainer>
@@ -149,11 +151,11 @@ const Footer = () => {
         
         <FooterSection>
           <FooterTitle>Quick Links</FooterTitle>
-          <FooterLink to="/" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Home</FooterLink>
-          <FooterLink to="/about" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>About</FooterLink>
-          <FooterLink to="/services" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Services</FooterLink>
-          {/* <FooterLink to="/portfolio" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Portfolio</FooterLink> */}
-          <FooterLink to="/contact" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Contact</FooterLink>
+          <FooterLink to="/" onClick={scrollToTop}>Home</FooterLink>
+          <FooterLink to="/about" onClick={scrollToTop}>About</FooterLink>
+          <FooterLink to="/services" onClick={scrollToTop}>Services</FooterLink>
+          {/* <FooterLink to="/portfolio" onClick={scrollToTop}>Portfolio</FooterLink> */}
+          <FooterLink to="/contact" onClick={scrollToTop}>Contact</FooterLink>
         </FooterSection>
         
         <FooterSection>

@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Button from '../components/common/Button';
+import useScrollToTop from '../hooks/useScrollToTop';
 import { Container, PageHeader, PageTitle, PageDescription, SectionTitle } from '../styles/commonStyles';
+
 const HeroSection = styled.section`
   max-width: 1200px;
   margin: 0 auto 5rem;
@@ -206,6 +208,8 @@ const CTADescription = styled.p`
 
 
 const About = () => {
+  const scrollToTop = useScrollToTop();
+
   useEffect(() => {
     document.title = 'CWC | About';
   }, []);
@@ -406,7 +410,7 @@ const About = () => {
           Let's discuss how CreerWebConsulting can help your business leverage technology
           to achieve your goals and drive growth.
         </CTADescription>
-        <Button primary large to="/contact" onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}>Get in Touch</Button>
+        <Button primary large to="/contact" onClick={scrollToTop}>Get in Touch</Button>
       </CTASection>
     </Container>
   );

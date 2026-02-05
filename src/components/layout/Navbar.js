@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { Slant as Hamburger } from 'hamburger-react';
+import { Squash as Hamburger } from 'hamburger-react';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const Nav = styled.nav`
   display: flex;
@@ -183,6 +184,7 @@ const Navbar = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const scrollToTop = useScrollToTop();
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -210,7 +212,7 @@ const Navbar = ({ scrolled }) => {
           isHomePage={isHomePage}
           onClick={() => {
             setIsOpen(false);
-            setTimeout(() => window.scrollTo(0, 0), 100);
+            scrollToTop();
           }}
         >
           <img src="/Logo_Full_Name.png" alt="CreerWebConsulting Logo" />
@@ -234,7 +236,7 @@ const Navbar = ({ scrolled }) => {
             isHomePage={isHomePage}
             onClick={() => {
               setIsOpen(false)
-              setTimeout(() => window.scrollTo(0, 0), 100)
+              scrollToTop()
             }}
             isActive={location.pathname === '/'}
           >
@@ -248,7 +250,7 @@ const Navbar = ({ scrolled }) => {
             isHomePage={isHomePage}
             onClick={() => {
               setIsOpen(false)
-              setTimeout(() => window.scrollTo(0, 0), 100)
+              scrollToTop()
             }}
             isActive={location.pathname === '/services'}
           >
@@ -262,7 +264,7 @@ const Navbar = ({ scrolled }) => {
             isHomePage={isHomePage}
             onClick={() => {
               setIsOpen(false)
-              setTimeout(() => window.scrollTo(0, 0), 100)
+              scrollToTop()
             }}
             isActive={location.pathname === '/about'}
           >
@@ -281,7 +283,7 @@ const Navbar = ({ scrolled }) => {
             to="/contact" 
             onClick={() => {
               setIsOpen(false)
-              setTimeout(() => window.scrollTo(0, 0), 100)
+              scrollToTop()
             }}
             isActive={location.pathname === '/contact'}
           >
