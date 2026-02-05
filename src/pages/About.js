@@ -192,6 +192,9 @@ const CTASection = styled.section`
 const CTATitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: white;
+  opacity: 0.9;
+  font-weight: 400;
 `;
 
 const CTADescription = styled.p`
